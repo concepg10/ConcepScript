@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConcepScripts - Inventario Premium</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div id="inventory-container" class="inventory-hidden">
+        <!-- Header del Inventario -->
+        <div class="inventory-header">
+            <div class="header-title">
+                <span class="icon">🎒</span>
+                <span class="title">Inventario Personal</span>
+                <span class="close-btn" onclick="closeInventory()">✕</span>
+            </div>
+            <div class="header-info">
+                <div class="weight-info">
+                    <span class="weight-label">Peso:</span>
+                    <span class="weight-current">45</span><span class="weight-separator">/</span><span class="weight-max">150</span> kg
+                    <div class="weight-bar">
+                        <div class="weight-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
+                <div class="slots-info">
+                    <span class="slots-label">Slots:</span>
+                    <span class="slots-current">12</span><span class="slots-separator">/</span><span class="slots-max">50</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Búsqueda -->
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="🔍 Buscar items..." onkeyup="filterItems()">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterByType('all')">Todo</button>
+                <button class="filter-btn" onclick="filterByType('consumible')">Consumibles</button>
+                <button class="filter-btn" onclick="filterByType('weapon')">Armas</button>
+                <button class="filter-btn" onclick="filterByType('valuable')">Valiosos</button>
+            </div>
+        </div>
+
+        <!-- Grid de Items -->
+        <div class="inventory-slots">
+            <div class="item-slot empty" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                <span class="empty-text">Vacío</span>
+            </div>
+            <div class="item-slot empty" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                <span class="empty-text">Vacío</span>
+            </div>
+            <div class="item-slot empty" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                <span class="empty-text">Vacío</span>
+            </div>
+            <!-- Los items se generarán dinámicamente con JavaScript -->
+        </div>
+
+        <!-- Footer -->
+        <div class="inventory-footer">
+            <span class="footer-info">💡 Arrastra items para mover • Clic derecho para opciones • ESC para cerrar</span>
+        </div>
+    </div>
+
+    <!-- Notificaciones -->
+    <div id="notifications-container" class="notifications-container"></div>
+
+    <!-- Menú Contextual -->
+    <div id="context-menu" class="context-menu hidden">
+        <div class="context-item" onclick="useItem()">Usar Item</div>
+        <div class="context-item" onclick="dropItem()">Dropear</div>
+        <div class="context-item" onclick="itemInfo()">Ver Información</div>
+        <div class="context-item" onclick="splitStack()">Dividir Stack</div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
