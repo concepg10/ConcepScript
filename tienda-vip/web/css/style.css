@@ -1,0 +1,404 @@
+/* ╔═══════════════════════════════════════════════════════════════╗
+   ║     ESTILOS - TIENDA VIP PREMIUM                            ║
+   ╚═══════════════════════════════════════════════════════════════╝ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* CONTENEDOR PRINCIPAL */
+#shop-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 700px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#shop-container.shop-hidden {
+    display: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* HEADER */
+.shop-header {
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(218, 165, 32, 0.2) 0%, rgba(184, 134, 11, 0.1) 100%);
+    border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.shop-icon {
+    font-size: 32px;
+}
+
+.shop-title {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vip-badge {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #a569c3;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.coins-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(218, 165, 32, 0.15);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(218, 165, 32, 0.3);
+}
+
+.coins-icon {
+    font-size: 24px;
+}
+
+.coins-amount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.coins-label {
+    font-size: 11px;
+    color: #bdc3c7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.close-btn {
+    width: 35px;
+    height: 35px;
+    background: rgba(231, 76, 60, 0.8);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background: rgba(231, 76, 60, 1);
+    transform: scale(1.1);
+}
+
+/* SEARCH */
+.shop-search {
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.search-input::placeholder {
+    color: #7f8c8d;
+}
+
+/* CATEGORÍAS */
+.shop-categories {
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-label {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #FFD700;
+    letter-spacing: 1px;
+}
+
+.categories-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    color: #bdc3c7;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    border-color: #FFD700;
+    color: #FFD700;
+}
+
+.category-btn.active {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-color: #FFA500;
+    color: #1a1a2e;
+    font-weight: bold;
+}
+
+/* ITEMS GRID */
+.shop-items {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.shop-items::-webkit-scrollbar {
+    width: 8px;
+}
+
+.shop-items::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.shop-items::-webkit-scrollbar-thumb {
+    background: rgba(218, 165, 32, 0.6);
+    border-radius: 10px;
+}
+
+.shop-items::-webkit-scrollbar-thumb:hover {
+    background: rgba(218, 165, 32, 0.8);
+}
+
+/* ITEM CARD */
+.item-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgba(218, 165, 32, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-card:hover {
+    border-color: rgba(218, 165, 32, 0.6);
+    box-shadow: 0 0 20px rgba(218, 165, 32, 0.3) inset;
+    transform: translateY(-3px);
+}
+
+.item-card.offer {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
+}
+
+.item-card.offer::before {
+    content: 'OFERTA';
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 5px 40px;
+    font-size: 11px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.item-icon {
+    font-size: 50px;
+    text-align: center;
+}
+
+.item-name {
+    font-size: 13px;
+    font-weight: bold;
+    color: #ecf0f1;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.item-description {
+    font-size: 11px;
+    color: #95a5a6;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.item-price {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+
+.price-current {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.price-original {
+    font-size: 12px;
+    color: #7f8c8d;
+    text-decoration: line-through;
+}
+
+.price-discount {
+    font-size: 11px;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.buy-btn {
+    padding: 10px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border: none;
+    border-radius: 6px;
+    color: #1a1a2e;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.buy-btn:disabled {
+    background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+    color: #2c3e50;
+    cursor: not-allowed;
+    transform: scale(1);
+}
+
+/* FOOTER */
+.shop-footer {
+    padding: 12px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(218, 165, 32, 0.2);
+    font-size: 12px;
+    color: #95a5a6;
+    text-align: center;
+}
+
+/* NOTIFICACIONES */
+.notifications-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2000;
+}
+
+.notification {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    border-left: 4px solid #27ae60;
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border-left-color: #c0392b;
+}
+
+.notification.warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    border-left-color: #e67e22;
+}
+
+.notification.info {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border-left-color: #2980b9;
+}

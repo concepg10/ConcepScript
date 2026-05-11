@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConcepScripts - Tienda VIP</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div id="shop-container" class="shop-hidden">
+        <!-- HEADER -->
+        <div class="shop-header">
+            <div class="header-left">
+                <span class="shop-icon">🛍️</span>
+                <span class="shop-title">TIENDA VIP EXCLUSIVA</span>
+                <span class="vip-badge">👑 PREMIUM ACCESS</span>
+            </div>
+            <div class="header-right">
+                <div class="coins-display">
+                    <span class="coins-icon">💎</span>
+                    <span class="coins-amount" id="coinsAmount">0</span>
+                    <span class="coins-label">VIP Coins</span>
+                </div>
+                <span class="close-btn" onclick="closeShop()">✕</span>
+            </div>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="shop-search">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar artículo VIP..." onkeyup="filterItems()">
+        </div>
+
+        <!-- CATEGORIES -->
+        <div class="shop-categories">
+            <div class="category-label">CATEGORÍAS:</div>
+            <div id="categoriesContainer" class="categories-list"></div>
+        </div>
+
+        <!-- ITEMS GRID -->
+        <div class="shop-items" id="itemsContainer">
+            <!-- Items se generan dinámicamente aquí -->
+        </div>
+
+        <!-- FOOTER -->
+        <div class="shop-footer">
+            💡 Click en COMPRAR para adquirir • ESC para cerrar
+        </div>
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div id="notifications-container" class="notifications-container"></div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
